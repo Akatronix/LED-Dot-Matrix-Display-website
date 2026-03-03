@@ -146,10 +146,15 @@ async function handleGetDisplay(req, res) {
         .json({ message: "Display not found with the provided Hardware ID." });
     }
 
+    // Fix: use displayInfo instead of display
+    displayInfo.isDataChanged = false;
+    await displayInfo.save();
+
     res.status(200).json({
       message: "Display data retrieved successfully.",
       display: displayInfo,
     });
+
   } catch (error) {
     console.error("Error fetching display:", error);
     res.status(500).json({ message: "Internal Server Error" });
