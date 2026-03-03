@@ -76,6 +76,7 @@ async function handleUpdateDisplay(req, res) {
     }
 
     display.firstline = firstline || display.firstline;
+    display.isDataChanged = true;
     display.firstlineScroll =
       firstlineScroll !== undefined ? firstlineScroll : display.firstlineScroll;
     display.secondline = secondline || display.secondline;
