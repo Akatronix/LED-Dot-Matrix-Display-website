@@ -36,6 +36,7 @@ async function handleCreateDisplay(req, res) {
       firstlineScroll: false,
       secondline: "Please enter the text to be displayed",
       secondlineScroll: true,
+      isDataChanged:true
     });
 
     const savedDisplay = await newDisplay.save();
