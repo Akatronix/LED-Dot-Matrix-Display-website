@@ -35,6 +35,10 @@ const displaySchema = new mongoose.Schema(
       type: Boolean,
       required: true,
     },
+    isDataChanged:{
+      type:Boolean,
+      required:true,
+    }
   },
   {
     timestamps: true,
