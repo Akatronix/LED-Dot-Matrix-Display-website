@@ -133,6 +133,43 @@ async function handleDeleteDisplay(req, res) {
 }
 
 
+// async function handleGetDisplay(req, res) {
+//   try {
+//     const { hardwareID } = req.params;
+
+//     if (!hardwareID) {
+//       return res.status(400).json({ message: "Hardware ID is required." });
+//     }
+
+//     const displayInfo = await Display.findOne({ hardwareID });
+
+//     if (!displayInfo) {
+//       return res
+//         .status(404)
+//         .json({ message: "Display not found with the provided Hardware ID." });
+//     }
+
+//     // Store the previous state of isDataChanged
+//     const previousIsDataChanged = displayInfo.isDataChanged;
+
+//     // Now set it to false
+//     displayInfo.isDataChanged = false;
+//     await displayInfo.save();
+
+//     res.status(200).json({
+//       message: "Display data retrieved successfully.",
+//       display: displayInfo,
+//       previousIsDataChanged, // send previous state back
+//     });
+//   } catch (error) {
+//     console.error("Error fetching display:", error);
+//     res.status(500).json({ message: "Internal Server Error" });
+//   }
+// }
+
+
+
+
 async function handleGetDisplay(req, res) {
   try {
     const { hardwareID } = req.params;
@@ -141,7 +178,11 @@ async function handleGetDisplay(req, res) {
       return res.status(400).json({ message: "Hardware ID is required." });
     }
 
-    const displayInfo = await Display.findOne({ hardwareID });
+    const displayInfo = await Display.findOneAndUpdate(
+      { hardwareID },
+      { $set: { isDataChanged: false } },
+      { new: false } // return document BEFORE update
+    ).lean();
 
     if (!displayInfo) {
       return res
@@ -149,18 +190,12 @@ async function handleGetDisplay(req, res) {
         .json({ message: "Display not found with the provided Hardware ID." });
     }
 
-    // Store the previous state of isDataChanged
-    const previousIsDataChanged = displayInfo.isDataChanged;
-
-    // Now set it to false
-    displayInfo.isDataChanged = false;
-    await displayInfo.save();
-
     res.status(200).json({
       message: "Display data retrieved successfully.",
       display: displayInfo,
-      previousIsDataChanged, // send previous state back
+      previousIsDataChanged: displayInfo.isDataChanged,
     });
+
   } catch (error) {
     console.error("Error fetching display:", error);
     res.status(500).json({ message: "Internal Server Error" });
