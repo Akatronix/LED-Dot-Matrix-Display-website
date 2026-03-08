@@ -171,7 +171,7 @@ export default function DisplayDetailsPage() {
                     className="w-full bg-slate-900/50 border border-slate-600 rounded-lg py-3 px-4 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
                   />
                 </div>
-                <div className="flex items-center gap-3">
+                {/* <div className="flex items-center gap-3">
                   <input
                     type="checkbox"
                     id="firstlineScroll"
@@ -186,7 +186,7 @@ export default function DisplayDetailsPage() {
                   >
                     Enable Scrolling
                   </label>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -212,7 +212,7 @@ export default function DisplayDetailsPage() {
                     className="w-full bg-slate-900/50 border border-slate-600 rounded-lg py-3 px-4 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
                   />
                 </div>
-                <div className="flex items-center gap-3">
+                {/* <div className="flex items-center gap-3">
                   <input
                     type="checkbox"
                     id="secondlineScroll"
@@ -227,7 +227,7 @@ export default function DisplayDetailsPage() {
                   >
                     Enable Scrolling
                   </label>
-                </div>
+                </div> */}
               </div>
             </div>
 
