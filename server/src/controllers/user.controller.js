@@ -95,7 +95,7 @@ async function login(req, res) {
 
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV == "production",
+      secure: true,
       sameSite: "strict",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
@@ -142,7 +142,7 @@ async function refreshTokenController(req, res) {
     const newAccessToken = await generateToken(
       { userId: userId },
       process.env.JWT_ACCESS_SECRET,
-      "1m",
+      "15m",
     );
 
     res.status(200).json({
