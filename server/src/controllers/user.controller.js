@@ -127,6 +127,7 @@ async function logoutHandler(req, res) {
 }
 
 async function refreshTokenController(req, res) {
+  console.log(req.cookies);
   try {
     const refreshToken = req.cookies.refreshToken;
     if (!refreshToken) {
