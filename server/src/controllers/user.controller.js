@@ -96,7 +96,7 @@ async function login(req, res) {
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
       secure: true,
-      sameSite: "strict",
+      sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -116,7 +116,7 @@ async function logoutHandler(req, res) {
     res.clearCookie("refreshToken", {
       httpOnly: true,
       secure: true,
-      sameSite: "Strict",
+      sameSite: "none",
       path: "/",
     });
     res.status(200).json({ message: "Logout successful" });
