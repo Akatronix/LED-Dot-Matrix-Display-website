@@ -149,6 +149,53 @@ export default function DisplayDetailsPage() {
       <div className="max-w-4xl mx-auto px-6 py-8">
         <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 shadow-2xl">
           <form onSubmit={handleSubmit} className="space-y-6">
+
+
+
+             {/* Second Line Section */}
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">
+                Second Line
+              </h3>
+              <div className="space-y-3">
+                <div>
+                  <label
+                    htmlFor="secondline"
+                    className="block text-sm font-medium text-slate-300 mb-2"
+                  >
+                    Text Content
+                  </label>
+                  <input
+                    type="text"
+                    id="secondline"
+                    name="secondline"
+                    value={formData.secondline}
+                    onChange={handleInputChange}
+                    className="w-full bg-slate-900/50 border border-slate-600 rounded-lg py-3 px-4 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
+                  />
+                </div>
+                {/* <div className="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    id="secondlineScroll"
+                    name="secondlineScroll"
+                    checked={formData.secondlineScroll}
+                    onChange={handleInputChange}
+                    className="w-4 h-4 text-red-600 bg-slate-900 border-slate-600 rounded focus:ring-red-500"
+                  />
+                  <label
+                    htmlFor="secondlineScroll"
+                    className="text-sm font-medium text-slate-300"
+                  >
+                    Enable Scrolling
+                  </label>
+                </div> */}
+              </div>
+            </div>
+
+
+
+            
             {/* First Line Section */}
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">
@@ -190,46 +237,7 @@ export default function DisplayDetailsPage() {
               </div>
             </div>
 
-            {/* Second Line Section */}
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4">
-                Second Line
-              </h3>
-              <div className="space-y-3">
-                <div>
-                  <label
-                    htmlFor="secondline"
-                    className="block text-sm font-medium text-slate-300 mb-2"
-                  >
-                    Text Content
-                  </label>
-                  <input
-                    type="text"
-                    id="secondline"
-                    name="secondline"
-                    value={formData.secondline}
-                    onChange={handleInputChange}
-                    className="w-full bg-slate-900/50 border border-slate-600 rounded-lg py-3 px-4 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
-                  />
-                </div>
-                {/* <div className="flex items-center gap-3">
-                  <input
-                    type="checkbox"
-                    id="secondlineScroll"
-                    name="secondlineScroll"
-                    checked={formData.secondlineScroll}
-                    onChange={handleInputChange}
-                    className="w-4 h-4 text-red-600 bg-slate-900 border-slate-600 rounded focus:ring-red-500"
-                  />
-                  <label
-                    htmlFor="secondlineScroll"
-                    className="text-sm font-medium text-slate-300"
-                  >
-                    Enable Scrolling
-                  </label>
-                </div> */}
-              </div>
-            </div>
+           
 
             {/* Submit Button */}
             <button
