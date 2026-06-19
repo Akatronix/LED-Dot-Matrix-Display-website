@@ -155,7 +155,7 @@ export default function DisplayDetailsPage() {
              {/* Second Line Section */}
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">
-                Second Line
+                First Line
               </h3>
               <div className="space-y-3">
                 <div>
@@ -199,7 +199,7 @@ export default function DisplayDetailsPage() {
             {/* First Line Section */}
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">
-                First Line
+                Second Line
               </h3>
               <div className="space-y-3">
                 <div>
